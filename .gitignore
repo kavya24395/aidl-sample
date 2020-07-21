@@ -1,0 +1,75 @@
+# Built application files
+AIDL\ Service/*/build/
+AIDL\ Client/*/build/
+
+# Local configuration file (sdk path, etc)
+AIDL\ Service/local.properties
+AIDL\ Client/local.properties
+
+# Gradle generated files
+AIDL\ Service/.gradle/
+AIDL\ Client/.gradle/
+
+# Signing files
+AIDL\ Service/.signing/
+AIDL\ Client/.signing/
+
+# User-specific configurations
+AIDL\ Service/.idea/libraries/
+AIDL\ Client/.idea/libraries/
+
+AIDL\ Service/.idea/workspace.xml
+AIDL\ Client/.idea/workspace.xml
+
+AIDL\ Service/.idea/tasks.xml
+AIDL\ Client/.idea/tasks.xml
+
+AIDL\ Service/.idea/.name
+AIDL\ Client/.idea/.name
+
+AIDL\ Service/.idea/compiler.xml
+AIDL\ Client/.idea/compiler.xml
+
+AIDL\ Service/.idea/copyright/profiles_settings.xml
+AIDL\ Client/.idea/copyright/profiles_settings.xml
+
+AIDL\ Service/.idea/encodings.xml
+AIDL\ Client/.idea/encodings.xml
+
+AIDL\ Service/.idea/misc.xml
+AIDL\ Client/.idea/misc.xml
+
+AIDL\ Service/.idea/modules.xml
+AIDL\ Client/.idea/modules.xml
+
+AIDL\ Service/.idea/scopes/scope_settings.xml
+AIDL\ Client/.idea/scopes/scope_settings.xml
+
+AIDL\ Service/.idea/vcs.xml
+AIDL\ Client/.idea/vcs.xml
+
+AIDL\ Service/*.iml
+AIDL\ Client/*.iml
+
+
+# OS-specific files
+AIDL\ Service/.DS_Store
+AIDL\ Client/.DS_Store
+
+AIDL\ Service/.DS_Store?
+AIDL\ Client/.DS_Store?
+
+AIDL\ Service/._*
+AIDL\ Client/._*
+
+AIDL\ Service/.Spotlight-V100
+AIDL\ Client/.Spotlight-V100
+
+AIDL\ Service/.Trashes
+AIDL\ Client/.Trashes
+
+AIDL\ Service/ehthumbs.db
+AIDL\ Client/ehthumbs.db
+
+AIDL\ Service/Thumbs.db
+AIDL\ Client/Thumbs.db
