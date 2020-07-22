@@ -14,16 +14,26 @@ class NumGeneratorService : Service() {
     private val mObserversList = ArrayList<ServiceObserver>()
     override fun onCreate() {
         super.onCreate()
+        updateObservers("Service is created")
+
     }
 
     private val mBinder = object : IRandomNumGeneratorInterface.Stub() {
         override fun getRandomNumber() {
+            updateObservers("providing a random number")
 
         }
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        TODO("Not yet implemented")
+        updateObservers("Bound to this service!")
+
+        return null
+    }
+
+    override fun onUnbind(intent: Intent?): Boolean {
+        updateObservers("Unbound from this service")
+        return false
     }
 
     fun addObserver(observer: ServiceObserver) {
@@ -31,5 +41,10 @@ class NumGeneratorService : Service() {
 
     }
 
+    fun updateObservers(status: String) {
+        for (observer in mObserversList) {
+            observer.onStatusUpdate(status)
+        }
+    }
 
 }
