@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.IBinder
 import com.kavya.aidl_service.IRandomNumGeneratorInterface
 import com.kavya.aidl_service.ServiceObserver
+import timber.log.Timber
 
 /**
  * Created by Kavya P S on 22/07/20.
@@ -27,8 +28,7 @@ class NumGeneratorService : Service() {
 
     override fun onBind(intent: Intent?): IBinder? {
         updateObservers("Bound to this service!")
-
-        return null
+        return mBinder
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
@@ -42,6 +42,7 @@ class NumGeneratorService : Service() {
     }
 
     fun updateObservers(status: String) {
+        Timber.d(status)
         for (observer in mObserversList) {
             observer.onStatusUpdate(status)
         }
