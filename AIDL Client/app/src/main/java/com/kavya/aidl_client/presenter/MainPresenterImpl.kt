@@ -3,6 +3,7 @@ package com.kavya.aidl_client.presenter
 import android.content.ComponentName
 import android.content.ServiceConnection
 import android.os.IBinder
+import android.os.RemoteException
 import com.kavya.aidl_client.IRandomNumGeneratorInterface
 import com.kavya.aidl_client.view.MainViewImpl
 
@@ -48,9 +49,13 @@ class MainPresenterImpl private constructor(var viewImpl: MainViewImpl) : MainPr
     }
 
     override fun onFetchNumberClick() {
-        numGeneratorService?.let {
-            viewImpl.updateUi("Fetched numebr is ${it.randomNumber}")
-        } ?: viewImpl.updateUi("Not bound to any service")
+        try {
+            numGeneratorService?.let {
+                viewImpl.updateUi("Fetched numebr is ${it.randomNumber}")
+            } ?: viewImpl.updateUi("Not bound to any service")
+        } catch (e: RemoteException) {
+            viewImpl.updateUi("Remote Exception caught! ${e.message}")
+        }
     }
 
 }
