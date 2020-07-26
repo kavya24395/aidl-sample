@@ -12,7 +12,7 @@ import timber.log.Timber
 
 class MainViewImpl : AppCompatActivity(), MainView {
     private lateinit var mBinding: ActivityMainBinding
-    private val serviceIntent = Intent("com.kavya.aidl_server")
+    private val serviceIntent = Intent("com.kavya.aidl_server.model.NumGeneratorService")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
