@@ -17,7 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".model.NumGeneratorService" />
+        <service
+            android:name=".model.NumGeneratorService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.kavya.aidl_service" />
+            </intent-filter>
+        </service>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
