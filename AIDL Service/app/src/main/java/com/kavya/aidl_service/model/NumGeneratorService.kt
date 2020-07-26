@@ -45,8 +45,9 @@ class NumGeneratorService : Service() {
     }
 
     private val mBinder = object : IRandomNumGeneratorInterface.Stub() {
-        override fun getRandomNumber() {
+        override fun getRandomNumber(): Int {
             updateObservers("providing a random number")
+            return number
         }
     }
 
