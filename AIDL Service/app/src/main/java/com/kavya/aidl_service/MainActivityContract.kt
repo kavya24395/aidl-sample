@@ -6,7 +6,6 @@ package com.kavya.aidl_service
 
 class MainActivityContract {
     interface BaseView<T> {
-        fun setPresenter(presenter: T)
     }
 
     interface BasePresenter {

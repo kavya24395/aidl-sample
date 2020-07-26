@@ -7,4 +7,8 @@ package com.kavya.aidl_service
 interface MainView : MainActivityContract.BaseView<MainPresenter> {
     fun initiateView()
 
+    fun startService()
+    
+    fun stopService()
+
 }
