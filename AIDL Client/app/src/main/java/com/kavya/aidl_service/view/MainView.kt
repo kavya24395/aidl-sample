@@ -1,6 +1,6 @@
-package com.kavya.aidl_client.view
+package com.kavya.aidl_service.view
 
-import com.kavya.aidl_client.BaseView
+import com.kavya.aidl_service.BaseView
 
 /**
  * Created by Kavya P S on 26/07/20.

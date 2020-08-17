@@ -5,7 +5,7 @@
 
         <variable
             name="presenter"
-            type="com.kavya.aidl_client.presenter.MainPresenterImpl" />
+            type="com.kavya.aidl_service.presenter.MainPresenterImpl" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

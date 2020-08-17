@@ -1,6 +1,6 @@
-package com.kavya.aidl_client.presenter
+package com.kavya.aidl_service.presenter
 
-import com.kavya.aidl_client.BasePresenter
+import com.kavya.aidl_service.BasePresenter
 
 /**
  * Created by Kavya P S on 26/07/20.

@@ -1,4 +1,4 @@
-package com.kavya.aidl_client
+package com.kavya.aidl_service
 
 import android.app.Application
 import timber.log.Timber

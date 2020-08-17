@@ -1,4 +1,4 @@
-package com.kavya.aidl_client;
+package com.kavya.aidl_service;
 
 
 interface IRandomNumGeneratorInterface {

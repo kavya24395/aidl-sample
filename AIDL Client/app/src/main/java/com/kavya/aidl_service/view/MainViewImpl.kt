@@ -1,22 +1,22 @@
-package com.kavya.aidl_client.view
+package com.kavya.aidl_service.view
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.kavya.aidl_client.R
-import com.kavya.aidl_client.databinding.ActivityMainBinding
-import com.kavya.aidl_client.presenter.MainPresenterImpl
+import com.kavya.aidl_service.R
+import com.kavya.aidl_service.databinding.ActivityMainBinding
+import com.kavya.aidl_service.presenter.MainPresenterImpl
 import timber.log.Timber
 
 class MainViewImpl : AppCompatActivity(), MainView {
     private lateinit var mBinding: ActivityMainBinding
-    private val serviceIntent = Intent("com.kavya.aidl_server.model.NumGeneratorService")
+    private val serviceIntent = Intent("com.kavya.aidl_service.model.NumGeneratorService")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        serviceIntent.`package` = "com.kavya.aidl_server"
+        serviceIntent.`package` = "com.kavya.aidl_service"
         mBinding = DataBindingUtil.setContentView(
             this,
             R.layout.activity_main
@@ -32,7 +32,8 @@ class MainViewImpl : AppCompatActivity(), MainView {
     }
 
     override fun bindService() {
-        if (MainPresenterImpl.getInstance(this).numGeneratorService == null) {
+        if (!MainPresenterImpl.getInstance(this).isBound) {
+            MainPresenterImpl.getInstance(this).isBound = true
             bindService(
                 serviceIntent,
                 MainPresenterImpl.getInstance(this).connection,
@@ -44,8 +45,9 @@ class MainViewImpl : AppCompatActivity(), MainView {
     }
 
     override fun unBindService() {
-        if (MainPresenterImpl.getInstance(this).numGeneratorService != null) {
+        if (MainPresenterImpl.getInstance(this).isBound) {
             MainPresenterImpl.getInstance(this).connection?.let { unbindService(it) }
+            MainPresenterImpl.getInstance(this).isBound = false
         } else {
             updateUi("Nothing is bound")
         }
