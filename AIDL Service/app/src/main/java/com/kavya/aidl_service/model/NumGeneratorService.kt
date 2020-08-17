@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.os.RemoteException
 import com.kavya.aidl_service.IRandomNumGeneratorInterface
 import com.kavya.aidl_service.ServiceObserver
 import timber.log.Timber
@@ -45,6 +46,7 @@ class NumGeneratorService : Service() {
     }
 
     private val mBinder = object : IRandomNumGeneratorInterface.Stub() {
+        @Throws(RemoteException::class)
         override fun getRandomNumber(): Int {
             updateObservers("providing a random number")
             return number
