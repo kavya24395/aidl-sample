@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AIDL_Client</string>
+    <string name="not_bound_msg">Not Bound to any service</string>
+    <string name="get_number_btn_text">Get a Number</string>
+    <string name="unbind_btn_text">Unbind</string>
+    <string name="bind_btn_text">Bind</string>
+    <string name="title">Fetch a random Number</string>
 </resources>
