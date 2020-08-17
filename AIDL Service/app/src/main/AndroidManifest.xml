@@ -21,7 +21,7 @@
             android:name=".model.NumGeneratorService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.kavya.aidl_service" />
+                <action android:name="com.kavya.aidl_service.model.NumGeneratorService" />
             </intent-filter>
         </service>
         <meta-data
